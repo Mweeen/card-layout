@@ -1,3 +1,13 @@
+/* Import Bootstrap CSS */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Ensure main content does not scroll */
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -61,23 +71,32 @@
 
 .main-content {
   flex-grow: 1;
-  margin-left: 240px; /* Width of the sidebar */
   padding: 20px;
-  overflow: hidden; /* Ensure main content does not scroll */
   height: 100%; /* Ensure main content takes up full height */
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr; /* TopNavbar, TabButtons, PageDescription, card-container */
+  gap: 20px; /* Space between components */
+}
+
+.TopNavbar {
+  height: 60px; /* Height of TopNavbar */
+}
+
+.TabButtons {
+  height: 40px; /* Height of TabButtons */
+}
+
+.PageDescription {
+  height: 100px; /* Height of PageDescription */
 }
 
 .card-container {
-  flex-grow: 1;
   overflow-y: auto; /* Ensure CardContainer is scrollable */
-  height: calc(100vh - 160px); /* Fixed height to fill remaining space */
-  border: 1px solid #dee2e6;
   border-radius: 0.25rem;
   padding: 20px;
-  margin-top: 20px; /* Add some space between top navbar and card container */
   width: 100%; /* Ensure it takes up full width */
+  max-height: calc(88vh - 220px); /* Adjust height to fill remaining space (60px for TopNavbar + 40px for TabButtons + 100px for PageDescription + 20px margin) */
+  margin-bottom: 20px; /* Add margin at the bottom */
 }
 
 /* Responsive styles */
@@ -94,6 +113,6 @@
   }
 
   .card-container {
-    height: calc(100vh - 180px); /* Adjust height for smaller screens */
+    max-height: calc(100vh - 240px); /* Adjust height for smaller screens */
   }
 }

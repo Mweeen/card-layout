@@ -11,7 +11,7 @@ const CardContainer = ({ tabValue }) => {
   ];
 
   return (
-    <div className="container" style={{ marginTop: '20px', overflowY: 'auto', maxHeight: '80vh' }}>
+    <div className="card-container" style={{ marginTop: '20px', overflowY: 'auto'}}>
       <div className="row">
         {cards.map((card, index) => (
           <div className="col-12 col-sm-6 col-md-4" key={index}>
