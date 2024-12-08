@@ -6,31 +6,25 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 const SideBar = () => {
   return (
-    <Drawer variant="permanent" anchor="left" sx={{ width: 240 }}>
+    <Drawer variant="permanent" anchor="left">
       <List>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <ListItemText primary="Home" />
-          </ListItemButton>
+        <ListItem button component="a" href="#/">
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
         </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary="About" />
-          </ListItemButton>
+        <ListItem button component="a" href="#/about">
+          <ListItemIcon>
+            <InfoIcon />
+          </ListItemIcon>
+          <ListItemText primary="About" />
         </ListItem>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemIcon>
-              <SettingsIcon />
-            </ListItemIcon>
-            <ListItemText primary="Settings" />
-          </ListItemButton>
+        <ListItem button component="a" href="#/settings">
+          <ListItemIcon>
+            <SettingsIcon />
+          </ListItemIcon>
+          <ListItemText primary="Settings" />
         </ListItem>
       </List>
     </Drawer>

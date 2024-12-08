@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .App-logo {
@@ -34,5 +37,63 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/* New styles for layout */
+.App-content {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  margin-left: 240px; /* Width of the sidebar */
+}
+
+.sidebar {
+  width: 240px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #282c34;
+  color: white;
+  padding: 20px;
+}
+
+.main-content {
+  flex-grow: 1;
+  margin-left: 240px; /* Width of the sidebar */
+  padding: 20px;
+  overflow: hidden; /* Ensure main content does not scroll */
+  height: 100%; /* Ensure main content takes up full height */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-container {
+  flex-grow: 1;
+  overflow-y: auto; /* Ensure CardContainer is scrollable */
+  height: calc(100vh - 160px); /* Fixed height to fill remaining space */
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  padding: 20px;
+  margin-top: 20px; /* Add some space between top navbar and card container */
+  width: 100%; /* Ensure it takes up full width */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .card-container {
+    height: calc(100vh - 180px); /* Adjust height for smaller screens */
   }
 }

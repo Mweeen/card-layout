@@ -14,17 +14,19 @@ function App() {
   };
 
   return (
-    <div className="App" style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
-      <SideBar />
-      <div style={{ marginLeft: 240, flex: 1, display: 'flex', flexDirection: 'column' }}>
-        <TopNavbar />
-        <div style={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-          <div style={{ display: 'flex', flexDirection: 'column', zIndex: 1, position: 'sticky', top: 0, backgroundColor: 'white' }}>
-            <PageDescription />
-            <TabButtons onTabChange={handleTabChange} />
-          </div>
-          <div style={{ flex: 1, overflowY: 'auto', maxHeight: 'calc(100vh - 150px)' }}>
-            <CardContainer tabValue={tabValue} />
+    <div className="App d-flex flex-column h-100">
+      <div className="App-content d-flex flex-grow-1">
+        <SideBar />
+        <div className="main-content d-flex flex-column flex-grow-1">
+          <TopNavbar />
+          <div className="d-flex flex-column flex-grow-1">
+            <div className="d-flex flex-column sticky-top bg-white w-100">
+              <PageDescription />
+              <TabButtons onTabChange={handleTabChange} />
+            </div>
+            <div className="flex-grow-1 border border-secondary rounded w-100">
+              <CardContainer tabValue={tabValue} />
+            </div>
           </div>
         </div>
       </div>

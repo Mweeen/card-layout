@@ -1,9 +1,8 @@
 import React from 'react';
-import { Grid, Container } from '@mui/material';
 import CardComponent from './CardComponent';
 
 const CardContainer = ({ tabValue }) => {
-  const cards = tabValue === 2 ? Array.from({ length: 12 }, (_, index) => (
+  const cards = tabValue === 2 ? Array.from({ length: 17 }, (_, index) => (
     <CardComponent key={index + 1} />
   )) : [
     <CardComponent key={1} />,
@@ -12,15 +11,15 @@ const CardContainer = ({ tabValue }) => {
   ];
 
   return (
-    <Container style={{ marginTop: '20px', overflowY: 'auto', maxHeight: '80vh' }}>
-      <Grid container spacing={2}>
+    <div className="container" style={{ marginTop: '20px', overflowY: 'auto', maxHeight: '80vh' }}>
+      <div className="row">
         {cards.map((card, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <div className="col-12 col-sm-6 col-md-4" key={index}>
             {card}
-          </Grid>
+          </div>
         ))}
-      </Grid>
-    </Container>
+      </div>
+    </div>
   );
 };
 

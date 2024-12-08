@@ -1,16 +1,13 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 
 const TopNavbar = () => {
   return (
-    <AppBar position="fixed">
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          My App
-        </Typography>
-        <Button color="inherit">Login</Button>
-      </Toolbar>
-    </AppBar>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div className="container-fluid">
+        <h6 className="navbar-brand">My App</h6>
+        <a className="btn btn-outline-light" href="#/login">Login</a>
+      </div>
+    </nav>
   );
 };
 
